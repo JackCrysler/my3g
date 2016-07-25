@@ -1,0 +1,57 @@
+@import "public.scss";
+.bind-form{
+	height:120px;
+	.code{
+		color:$border-c;
+	}
+	.code-img{
+		@extend .code;
+		small{
+			color:$high-c;
+			font-size:8px;
+			line-height:65px;
+		}
+		img{
+			width:63px;
+			height:21px;
+			@include pos;
+			top:3px;
+			left:50%;
+			margin-left:-31px;
+		}
+	}
+	.bind-tip{
+		border-bottom:none;
+		color:$text-cc;
+		font-size:14px;
+	}
+	p:nth-of-type(2){
+		padding-right:100px;
+	}
+	p:nth-of-type(3){
+		padding-right:100px;
+	}
+}
+.bind-text{
+	margin-top:20px;
+	h2,p,h3{
+		color:$text-cc;
+	}
+	h2{
+		font-size:16px;
+		line-height:30px;
+	}
+	h3,p{
+		font-size:14px;
+		line-height:25px;
+		padding-left:20px;
+	}
+	h3{
+		@include pos(relative);
+		@include listStyle($w:10px);
+		&:after{
+			left:5px;
+			margin-top:-5px;
+		}
+	}
+}

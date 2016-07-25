@@ -1,0 +1,194 @@
+@import "public.scss";
+.my{
+	padding:0;
+	background:#f4f4f4;
+	.my-top{
+		padding:0 30px;
+		height:60px;
+		background:#fff;
+		.title{
+			height:60px;
+			border-bottom:1px solid $border-c;
+			font-size:18px;
+			text-align:center;
+			line-height:60px;
+		}
+	}
+}
+.my-tab{
+	width:100%;
+	height:100%;
+	background:#fff;
+	@include pos(relative);
+	top:0;
+	h4,p,span{
+		font-size:14px;
+	}
+	.tab-title{
+		padding:0 30px;
+		height:40px;
+		line-height:40px;
+		background:#fff;
+		@include pos(relative);
+		span{
+			float:left;
+			width:25%;
+			height:100%;
+			font-size:12px;
+			text-align:center;
+			color:$text-cc;
+			border-bottom:2px solid transparent;
+			&.on{
+				color:$high-c;
+				border-bottom-color:$high-c;
+			}
+		}
+	}
+	.tab-main-wrap{
+		width:100%;
+		height:100%;
+		padding-top:10px;
+		background:#f4f4f4;
+	}
+	.tab-main{
+		width:400%;
+		height:100%;
+		background:#fff;
+		transform:translateX(0);
+		section{
+			width:25%;
+			height:100%;
+			float:left;
+			padding:0 30px;
+			@include pos(relative);
+		}
+	}
+	.count{
+		li{
+			height:100px;
+			border-bottom:1px solid $border-c;
+			h4{
+				font-size:16px;
+				line-height:30px;
+				padding-top:10px;
+			}
+			p{
+				line-height:25px;
+				color:$text-cc;
+			}
+			&:last-child{
+				border:none;
+			}
+		}
+	}
+	.my-text{
+		@include pos;
+		bottom:100px;
+		left:0;
+	}
+	.pay{
+		p{
+			line-height:40px;
+			border-bottom:1px solid $border-c;
+			input{
+				width:100%;
+			}
+		}
+		h4{
+			line-height:40px;
+		}
+	}
+	.price{
+		width:100%;
+		span{
+			float:left;
+			width:48%;
+			height:40px;
+			border:1px solid $border-c;
+			border-radius:5px;
+			color:$text-cc;
+			margin-right:4%;
+			margin-bottom:10px;
+			text-align:center;
+			line-height:40px;
+			&:nth-of-type(2n){
+				margin-right:0;
+			}
+			&.on{
+				border-color:$high-c;
+				color:$high-c;
+			}
+		}
+	}
+	.pay-btn{
+		margin-top:100px;
+	}
+	.current-top{
+		width:100%;
+		h4,ul,li,p{
+			width:100%;
+		}
+		h4{
+			height:45px;
+			line-height:35px;
+			padding-top:5px;
+			border-bottom:1px solid $border-c;
+			.right{
+				color:$high-c;
+			}
+			font-size:14px;
+		}
+		h2{
+			height:40px;
+			line-height:40px;
+		}
+		.tap{
+			padding:6px 0;
+			color:$high-c;
+			line-height:20px;
+			font-size:12px;
+		}
+		ul li{
+			height:25px;
+			line-height:25px;
+			font-size:12px;
+			padding-left:20px;
+			@include pos(relative);
+			@include listStyle($w:10px);
+			&:after{
+				left:0px;
+				margin-top:-5px;
+			}
+		}
+	}
+	.my-menu{
+		h4{
+			height:45px;
+			line-height:35px;
+			padding-top:5px;
+			border-bottom:1px solid $border-c;
+		}
+		p{
+			line-height:30px;
+		}
+		ul li{
+			height:25px;
+			line-height:25px;
+			font-size:12px;
+			padding-left:20px;
+			color:$text-cc;
+			@include pos(relative);
+			@include listStyle($w:10px);
+			&:after{
+				left:0px;
+				margin-top:-5px;
+			}
+		}
+	}
+	.exit-btn{
+		bottom:240px;
+		span{
+			display:block;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <!--设置视口的宽度=设备的宽度；初始化比例：1:1；最大，最小比例为：1:1；禁止用户缩放或放大-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--禁止自动识别电话号码-->
+    <meta name='format-detection' content='telephone=no'>
+    <!--禁止自动识别邮箱-->
+    <meta name='format-detection' content='email=no'>
+    <link rel="stylesheet" href="css/main.css">
+    <title>登录注册</title>
+</head>
+<body>
+<!-- 登录页面 -->
+<div class="container pad-top">
+    <div class="wrapper">
+        <div class="login-form">
+            <p><input class='Id' type="text" placeholder='入网证件号码'></p>
+            <p><input class='Code' type="text" placeholder='验证码'><span class="code">获取验证码</span><span class='timer hide'><b>59s后重发</b></span></p>
+        </div>
+        <div class="login-tap"></div>
+        <!-- 公共样式：btn:激活状态 ；btn-dis:不能点击状态-->
+        <div class="btn login-btn btn-dis">登录</div>
+        <div class="btn card-btn">没有账号，我要开卡</div>
+        <p class="login-tip"><span class='question'>?</span>3G常见问题</p>
+        <div class="other-way">其他开通途径</div>
+    </div>
+</div>
+
+<script src="lib/requirejs/require.2.1.15.min.js" data-main="main"></script>
+</body>
+</html>

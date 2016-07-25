@@ -1,0 +1,24 @@
+{
+  "name": "ticwatch",
+  "version": "1.0.0",
+  "description": "fake program my3g by 1407D",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "t",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^1.0.2",
+    "gulp-jshint": "^2.0.1",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.3"
+  }
+}

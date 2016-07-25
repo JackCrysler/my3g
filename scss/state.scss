@@ -1,0 +1,84 @@
+@import "public.scss";
+.state{
+	.state-num{
+		width:100%;
+		height:110px;
+		background:#fff;
+		padding:0 30px;
+		section{
+			width:25%;
+			height:100%;
+			float:left;
+			@include pos(relative);
+			.big{
+				width:40px;
+				height:40px;
+				border-radius:50%;
+				background:rgba(94,131,225,0);
+				margin:10px auto;
+				@include pos(relative);
+				z-index:2;
+			}
+			.small{
+				width:30px;
+				height:30px;
+				border-radius:50%;
+				background:$border-c;
+				@include pos;
+				left:50%;
+				top:50%;
+				margin:-15px 0 0 -15px;
+				text-align:center;
+				line-height:30px;
+				color:#fff;
+				font-size:12px;
+			}
+			&:after{
+				content:'';
+				width:100%;
+				height:4px;
+				background:$border-c;
+				@include pos;
+				right:30px;
+				top:27px;
+			}
+			span{
+				font-size:14px;
+				color:$text-cc;
+				text-align:center;
+				display:block;
+				width:100%;
+			}
+			&:first-child{
+				&:after{
+					display:none;
+				}
+			}
+			&.state-high{
+				&:after{
+					background:$high-c;
+				}
+				span{
+					color:$high-c;
+				}
+				.small{
+					background:$high-c;
+				}
+			}
+			&.now{
+				.big{
+					background:rgba(94,131,225,0.2);
+				}
+			}
+		}
+		
+	}
+	.order-detail{
+		padding:15px 30px;
+		margin-top:10px;
+		background:#fff;
+	}
+	.footer-text{
+		padding:15px 30px;
+	}
+}

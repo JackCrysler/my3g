@@ -1,0 +1,140 @@
+@import "public.scss";
+.choose{
+	@include pos(relative);
+	.box{
+		@include pos(relative);
+		.question{
+			background:orange;
+			@include pos;
+			right:5px;
+			top:50%;
+			margin-top:-8px;
+		}
+		input{
+			padding-right:25px;
+		}
+		&:first-child{
+			margin-top:15px;
+		}
+	}
+	.pre-box{
+		height:50px;
+		@include pos(relative);
+	}
+	span{
+		font-size:14px;
+	}
+	h2{
+		width:100%;
+		height:24px;
+		font-size:14px;
+		line-height:24px;
+	}
+	.give{
+		height:50px;
+		line-height:50px;
+	}
+	.show{
+		height:40px;
+		line-height:40px;
+	}
+	.open-box{
+		width:100%;
+		height:36px;
+		@include pos(relative);
+		span{
+			@include pos;
+			top:0;
+			width:48%;
+			height:36px;
+			border:1px solid $border-c;
+			border-radius:5px;
+			line-height:36px;
+			text-align:center;
+			&:nth-of-type(1){
+				left:0;
+			}
+			&:nth-of-type(2){
+				right:0;
+			}
+		}
+		.open-high{
+			color:$high-c;
+			border-color:$high-c;
+		}
+	}
+}
+.tel-number{
+	padding:15px 20px;
+	.number{
+		float:left;
+		width:48%;
+		height:36px;
+		margin-top:10px;
+		border:1px solid $border-c;
+		border-radius:5px;
+		text-align:center;
+		line-height:36px;
+		font-size:14px;
+		color:$text-cc;
+		&:nth-of-type(2n){
+			margin-left:4%;
+		}
+	}
+	.num-high{
+		color:$high-c;
+		border-color:$high-c;
+	}
+}
+.question-page{
+	@include pos;
+	top:56px;
+	left:5%;
+	z-index:9;
+	padding:15px 20px;
+	background:#fff;
+	border-radius:5px;
+	box-shadow:0 0 15px rgba(0,0,0,0.4);
+	width:90%;
+	height:85%;
+	h2{
+		height:auto;
+	}
+	h2 span{
+		display:block;
+		color:orange;
+		line-height:40px;
+	}
+	.arrow{
+		width:35px;
+		height:15px;
+		overflow:hidden;
+		@include pos;
+		right:15px;
+		top:-15px;
+		@include upArrow($w:20px,$c:#fff);
+		&:after{
+			background:#fff;
+			box-shadow:0 0 15px rgba(0,0,0,0.4);
+			top:10px;
+			left:10px;
+		}
+	}
+	.pic1{
+		@include pos;
+		left:50%;
+		top:120px;
+		width:251px;
+		height:180px;
+		margin-left:-125px;
+	}
+	.pic2{
+		@include pos;
+		left:50%;
+		top:310px;
+		width:163px;
+		height:165px;
+		margin-left:-81px;
+	}
+}
+
