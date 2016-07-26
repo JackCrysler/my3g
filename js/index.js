@@ -1,11 +1,14 @@
-define(['jquery','js/valid','js/api','js/common'],function($,V,api,common){
+define(['jquery','js/valid','js/api','js/common','js/dialog'],function($,V,api,common,dialog){
     var Id = $('.Id'),
         Code = $('.Code'),
         validBtn = $('.code');
-
+    var Dialog = new dialog();
     var IdVal = $.trim(Id.val());
     var CodeVal = $.trim(Code.val());
-    var validCode =null;
+    var validCode = null;
+
+    console.log(common.getAgentType());
+
     validBtn.on('click',function(){
         if(V.idCard(IdVal)){
             common.countDown(validBtn);
@@ -17,7 +20,9 @@ define(['jquery','js/valid','js/api','js/common'],function($,V,api,common){
             });
          return;
         }
-        alert('请输入正确格式的证件号码')
+        Dialog.alert('请输入正确格式的证件号码',function(){
+            Id.focus();
+        });
     });
 
 

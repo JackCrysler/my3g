@@ -1,6 +1,20 @@
 input{
   color: #515151;
 }
+.mask-layer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+.mask-active{
+  opacity: .7;
+}
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -260,19 +274,20 @@ html,body,.container{
 .show{
   display:block;
 }
+.transparency{
+  opacity: 0;
+}
 .dialog-box{
-  width:87%;
-  height:180px;
-  background:#fff;
-  border-radius:6px;
-  overflow:hidden;
-  @include pos(fixed);
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  margin:auto;
-  z-index:999999999;
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background: #FFFFFF;
+  border: 1px solid #eeeeee;
+  z-index: 10100;
+  padding-bottom: 20px;
+  border-radius: 6px;
   .dialog-title{
     background:$high-c;
     line-height:40px;
@@ -293,20 +308,20 @@ html,body,.container{
   }
   .dialog-btn-wrap{
     width:60%;
-    height:40px;
-    margin:0 auto;
-    margin-top:10%;
+    min-height:30px;
+    margin:10% auto 0;
     display:-webkit-box;
     -webkit-box-pack:center;
     .dialog-btn{
       -webkit-flex:1;
       width:40%;
-      height:34px;
-      border:1px solid $high-c;
+      font-size: .8rem;
+      margin: 0 10px;
+      border: 1px solid #eee;
       border-radius:5px;
       display:block;
       text-align:center;
-      line-height:34px;
+      line-height:1.8;
       color:#666;
       cursor:pointer;
     }
@@ -450,8 +465,9 @@ html,body,.container{
   margin-top:8px;
   padding:5px 15px;
   &:nth-of-type(1){
-    margin-top:none;
+    margin-top:0;
   }
+
   li{
     font-size:12px;
     color:$text-cc;
