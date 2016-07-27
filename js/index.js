@@ -1,4 +1,6 @@
 define(['jquery','js/valid','js/api','js/common','js/dialog'],function($,V,api,common,dialog){
+    console.log(window.location.href);
+    if(window.location.href.indexOf('index.html') == -1) return;
     var Id = $('.Id'),
         Code = $('.Code'),
         validBtn = $('.code');

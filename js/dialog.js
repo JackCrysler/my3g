@@ -5,18 +5,20 @@ define(['jquery','js/common'], function ($,common) {
             title:'对话框'
         }:option;
         this.agent = common.getAgentType();
-        this.defaultDom = this.option.defaultDom || '<p class="dialog-title">{title}</p><p class="dialog-msg">{msg}</p> <p class="dialog-btn-wrap">{btnwrap}</p>';
+        this.str = '<p class="dialog-title">{title}</p><p class="dialog-msg">{msg}</p> <p class="dialog-btn-wrap">{btnwrap}</p>';
+        this.defaultDom = this.option.defaultDom || this.str;
         this.init();
     };
 
     Dialog.prototype = {
         init:function(){
             this.callback = null;
-            this.defaultDom = this.defaultDom.replace('{title}',this.option.title);
+            this.str = this.defaultDom.replace('{title}',this.option.title);
             this.ifNeedAnimate = this.agent.isIos || this.agent.isiPad || this.agent.isIphone;
         },
         alert:function(msg,callback){
             this.show();
+            this.defaultDom = this.str;
             this.defaultDom = this.defaultDom.replace("{msg}",msg)
             .replace('{btnwrap}','<span class="dialog-btn dialog-certain">确定</span>');
             this.dialogBox.html(this.defaultDom);
@@ -26,6 +28,7 @@ define(['jquery','js/common'], function ($,common) {
         },
         confirm:function(msg,callback){
             this.show();
+            this.defaultDom = this.str;
             this.defaultDom = this.defaultDom.replace("{msg}",msg)
                 .replace('{btnwrap}','<span class="dialog-btn dialog-certain">确定</span><span class="dialog-btn dialog-cancel">取消</span>');
             this.dialogBox.html(this.defaultDom);
