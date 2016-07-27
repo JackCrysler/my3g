@@ -11,7 +11,9 @@ gulp.task('server', ['sass'], function() {
     });
 
     gulp.watch("scss/*.scss", ['sass']);
+    gulp.watch("main.scss", ['sass']);
     gulp.watch("js/*.js").on('change', reload);
+    gulp.watch("main.js").on('change', reload);
     gulp.watch("pages/*.html").on('change', reload);
     gulp.watch("index.html").on('change', reload);
 });

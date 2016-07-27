@@ -50,7 +50,10 @@ define(['jquery','js/valid','js/api','js/common','js/dialog'],function($,V,api,c
          }else{
              alert('验证码输入有误。')
          }
+    });
+
+
+    $('.card-btn').on('click',function(){
+        window.location.href = 'pages/bind.html';
     })
-
-
 });

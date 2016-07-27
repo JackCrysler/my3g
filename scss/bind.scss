@@ -1,57 +1,54 @@
-@import "public.scss";
-.bind-form{
-	height:120px;
-	.code{
-		color:$border-c;
-	}
-	.code-img{
-		@extend .code;
-		small{
-			color:$high-c;
-			font-size:8px;
-			line-height:65px;
+#bind{//css 选择器的优先级  id>class>tag
+	.bind-form{
+		height:160px;
+		.code{
+			color:$border-c;
 		}
-		img{
-			width:63px;
-			height:21px;
-			@include pos;
-			top:3px;
-			left:50%;
-			margin-left:-31px;
+		.code-img{
+			position: absolute;
+			right: 0;
+			height: 100%;
+			width: 100px;
+			padding: 5px 10px;
+			img{
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+		}
+		.bind-tip{
+			border-bottom:none;
+			color:$text-cc;
+			font-size:14px;
+		}
+		p:nth-of-type(2){
+			padding-right:100px;
+		}
+		p:nth-of-type(3){
+			padding-right:100px;
 		}
 	}
-	.bind-tip{
-		border-bottom:none;
-		color:$text-cc;
-		font-size:14px;
-	}
-	p:nth-of-type(2){
-		padding-right:100px;
-	}
-	p:nth-of-type(3){
-		padding-right:100px;
-	}
-}
-.bind-text{
-	margin-top:20px;
-	h2,p,h3{
-		color:$text-cc;
-	}
-	h2{
-		font-size:16px;
-		line-height:30px;
-	}
-	h3,p{
-		font-size:14px;
-		line-height:25px;
-		padding-left:20px;
-	}
-	h3{
-		@include pos(relative);
-		@include listStyle($w:10px);
-		&:after{
-			left:5px;
-			margin-top:-5px;
+	.bind-text{
+		margin-top:20px;
+		h2,p,h3{
+			color:$text-cc;
+		}
+		h2{
+			font-size:16px;
+			line-height:30px;
+		}
+		h3,p{
+			font-size:14px;
+			line-height:25px;
+			padding-left:20px;
+		}
+		h3{
+			@include pos(relative);
+			@include listStyle($w:10px);
+			&:after{
+				left:5px;
+				margin-top:-5px;
+			}
 		}
 	}
 }

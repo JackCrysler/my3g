@@ -3,7 +3,7 @@ define([], function () {
         getUrlParams: function (target) {
             var reg = new RegExp("(&|^)" + target + "=([^&]*)(&|$)", 'i');
             var res = location.search.substr(1).match(reg);
-            console.log(res);
+            console.log(res[2]);
             return res[2];
         },
         countDown: function (ele) {
@@ -70,6 +70,17 @@ define([], function () {
                 }
             }
 
+        },
+        uniqueArray:function(arr){
+            var obj = {},_arr=[];
+            arr.forEach(function(v,i){
+                if(!obj[v]){
+                    obj[v] = 1;
+                    _arr.push(v);
+                }
+            });
+            return _arr;
         }
     }
 });
+
