@@ -24,6 +24,21 @@ define(['jquery'],function($){
                     console.log(err.responseText);
                 }
             })
+        },
+        getVerifyCode:function(data,callback){
+            $.when(
+                $.ajax({
+                    url:'../data/getValidCode.json',
+                    data:data
+                }),
+                $.ajax('../data/order.json')
+            )
+            .done(function(data){
+                callback(data);
+            })
+            .fail(function(err){
+                console.log(err)
+            })
         }
     }
 });

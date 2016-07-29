@@ -7,6 +7,7 @@ define([], function () {
             return res[2];
         },
         countDown: function (ele) {
+            if(ele.hasClass('counting')) return;
             if (window._timer) {
                 clearInterval(_timer);
             }
@@ -16,9 +17,11 @@ define([], function () {
                 leftTime--;
                 if (leftTime <= 0) {
                     ele.text('获取验证码');
+                    ele.removeClass('counting');
                     clearInterval(timer)
                 } else {
-                    ele.text(leftTime + 's后重发')
+                    ele.text(leftTime + 's后重发');
+                    ele.addClass('counting');
                 }
             }, 1000);
             window._timer = timer;

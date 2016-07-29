@@ -1,4 +1,4 @@
-define(['jquery','js/common','js/dialog'],function($,common,dialog){
+define(['jquery','js/common','js/dialog','js/api'],function($,common,dialog,api){
     if(window.location.href.indexOf('bind.html') == -1) return;
     var url = 'https://ticwear-account.mobvoi.com/captcha/img?origin=ticwatch-service';
     var arr = [];
@@ -24,6 +24,8 @@ define(['jquery','js/common','js/dialog'],function($,common,dialog){
 
 
     var Dialog = new dialog();
+    var flag = true;
+    var _code = '';
     $('.code').on('click',function(){
         var phone = $('.phone-number').val(),
             imgCode = $('.img-code').val();
@@ -32,15 +34,28 @@ define(['jquery','js/common','js/dialog'],function($,common,dialog){
         if(!reg_phone.test(phone)){
             Dialog.alert('请输入正确格式的手机号码',function(){
                 $('.phone-number').focus();
+                flag =false;
             });
             return;
         }
         if(!reg_imgcode.test(imgCode)){
             Dialog.alert('请输入验证码',function(){
                 $('.img-code').focus();
-            })
+                flag =false;
+            });
+            return;
         }
+        flag = true;
 
+        if(!flag) return;
+        common.countDown($(this));
+        api.getVerifyCode({id:1},function(data){
+            console.log(data);
+            if(data[1] == 'success'){
+                _code = data[0].code;
+            }
+
+        })
     });
 
     $('.img-code').on('input propertychange',function(){
@@ -60,11 +75,33 @@ define(['jquery','js/common','js/dialog'],function($,common,dialog){
                         Dialog.alert('验证码输入有误',function(){
                             $('#randomImg').click();
                             self.focus();
-                        })
+                            flag =false;
+                        });
+                    }else{
+                        flag =true;
                     }
+
                 }
             })
         }
 
+    });
+
+    $('.verify-code').on('input propertychange',function(){
+        var val = $(this).val();
+        if(val.length == 6){
+            $('.btn-dis').removeClass('btn-dis');
+        }
+    });
+    $('.bind-btn').on('click',function(){
+        if($(this).hasClass('btn-dis')) return;
+        if($('.verify-code').val() != _code){
+            Dialog.alert('验证码输入有误',function(){
+                $('.verify-code').focus();
+            });
+            return;
+        }
+        window.location.href = '';
     })
+
 });
