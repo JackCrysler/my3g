@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--声明文档使用的字符编码-->
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <!--设置视口的宽度=设备的宽度；初始化比例：1:1；最大，最小比例为：1:1；禁止用户缩放或放大-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--禁止自动识别电话号码-->
+    <meta name='format-detection' content='telephone=no'>
+    <!--禁止自动识别邮箱-->
+    <meta name='format-detection' content='email=no'>
+    <title>选择号码及套餐</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="wrapper choose">
+			<!-- 公共样式：box :矩形文本框；box-btn:矩形按钮样式；question:问号样式-->
+			<p class='box'><input type="text" placeholder='请输入您手表的ICCID'><span class="question choose-qtn">?</span>
+				<!-- 问题提示页，默认隐藏，划过显示，离开隐藏 hide -->
+				<section class='question-page hide'>
+					<span class="arrow"></span>
+					<h2>请到您的手表包装盒或Ticwear[设置-关于]菜单中查看获取ICCID码（20位）：<span>请正确填写否则可能绑定其他手表</span></h2>
+					<img  class="pic pic1" src="../img/pic1.jpg" alt="" class="pic1">
+					<img  class="pic pic2" src="../img/pic2.jpg" alt="" class="pic1">
+				</section>
+			</p>
+			<div class="box-btn choose-tel">选择号码</div>
+			<div class='pre-box'><span>预存金额</span><span class="pre">30元</span></div>
+			<div class="choose-package">
+				<h2>选择套餐</h2>
+				<ul class="choose-item checked-item">
+					<li>0元永租</li>
+					<li>永久0元月租，主叫0.15分/分钟，</li>
+					<li>流量0.15元/MB</li>
+				</ul>
+				<ul class="choose-item">
+					<li>0元永租</li>
+					<li>永久0元月租，主叫0.15分/分钟，</li>
+					<li>流量0.15元/MB</li>
+				</ul>
+			</div>
+			<h2 class='give'>开通即赠送100M流量，6个月内有效</h2>
+			<h2 class='show'>来电显示</h2>
+			<div class='open-box'>
+				<!-- 高亮显示open-high -->
+				<span class="open-high">开通5元/月</span>
+				<span>暂不需要</span>
+			</div>
+			<div class='pos-btn'><span class="btn btn-dis next-btn">下一步</span></div>
+		</div>
+		<!-- 电话号码页，定位在页面右侧，right-hide:隐藏 -->
+		<section class="tel-number right-page right-hide">
+			<!-- <span class='number num-high'>150 3023 4663</span> -->
+		</section>
+	</div>
+
+
+	<script src="../lib/requirejs/require.2.1.15.min.js" data-main="../main"></script>
+</body>
+</html>

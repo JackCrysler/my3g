@@ -101,7 +101,7 @@ define(['jquery','js/common','js/dialog','js/api'],function($,common,dialog,api)
             });
             return;
         }
-        window.location.href = '';
+        window.location.href = '../pages/choose.html';
     })
 
 });

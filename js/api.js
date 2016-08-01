@@ -39,6 +39,15 @@ define(['jquery'],function($){
             .fail(function(err){
                 console.log(err)
             })
+        },
+        getNumber:function(data,callback){
+            $.when($.ajax('../data/numList.json'))
+            .done(function(data){
+                callback(data);
+            })
+            .fail(function(err){
+                console.log(err);
+            })
         }
     }
 });
