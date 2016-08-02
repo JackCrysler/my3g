@@ -3,7 +3,6 @@ define([], function () {
         getUrlParams: function (target) {
             var reg = new RegExp("(&|^)" + target + "=([^&]*)(&|$)", 'i');
             var res = location.search.substr(1).match(reg);
-            console.log(res[2]);
             return res[2];
         },
         countDown: function (ele) {

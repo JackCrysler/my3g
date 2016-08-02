@@ -1,5 +1,5 @@
 define(['jquery','js/valid','js/api','js/common','js/dialog'],function($,V,api,common,dialog){
-    console.log(window.location.href);
+
     if(window.location.href.indexOf('index.html') == -1) return;
     var Id = $('.Id'),
         Code = $('.Code'),
@@ -9,7 +9,7 @@ define(['jquery','js/valid','js/api','js/common','js/dialog'],function($,V,api,c
     var CodeVal = $.trim(Code.val());
     var validCode = null;
 
-    console.log(common.getAgentType());
+
 
     validBtn.on('click',function(){
         if(V.idCard(IdVal)){
@@ -48,9 +48,11 @@ define(['jquery','js/valid','js/api','js/common','js/dialog'],function($,V,api,c
 
     $('.login-btn').on('click',function(){
          if($.trim(Code.val()) == validCode){
-             location.href = '';
+             location.href = '../pages/choose.html';
          }else{
-             alert('验证码输入有误。')
+             Dialog.alert('验证码输入有误。',function(){
+
+             })
          }
     });
 

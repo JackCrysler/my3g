@@ -8,8 +8,11 @@ input{
   left: 0;
   top: 0;
   background: #000;
-  opacity: 0;
+  opacity: 0.7;
   transition: opacity .3s linear;
+}
+.mask-hide{
+  display: none;
 }
 .mask-active{
   opacity: .7;

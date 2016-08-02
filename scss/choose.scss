@@ -1,6 +1,12 @@
 @import "public.scss";
 .choose{
 	@include pos(relative);
+	padding-bottom: 50px;
+	overflow: auto !important;
+	.pos-btn{
+		bottom: 0;
+	}
+
 	.box{
 		@include pos(relative);
 		.question{

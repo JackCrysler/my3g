@@ -1,10 +1,11 @@
 //common stylesheet
 @import "scss/reset";
 @import "scss/public";
+//component stylesheet
+@import "scss/slideSelect";
 
 //develop stylesheet
 @import "scss/login";
 @import "scss/bind";
-
-@import "scss/info";
 @import "scss/choose";
+@import "scss/info";

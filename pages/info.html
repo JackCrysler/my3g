@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--声明文档使用的字符编码-->
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <!--设置视口的宽度=设备的宽度；初始化比例：1:1；最大，最小比例为：1:1；禁止用户缩放或放大-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--禁止自动识别电话号码-->
+    <meta name='format-detection' content='telephone=no'>
+    <!--禁止自动识别邮箱-->
+    <meta name='format-detection' content='email=no'>
+    <title>填写信息</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="wrapper info">
+			<div class="box high">30元预存/0元月租/150 3023 4663<span class='ok'></span></div>
+			<h2>身份信息</h2>
+			<div class='box'><input type="text"placeholder='姓名'></div>
+			<div class='box'><input type="text"placeholder='身份证号'></div>
+			<div class='box'><input type="text"placeholder='身份证地址'></div>
+			<div class='box'><input type="text"placeholder='联系电话'></div>
+			<!-- 点击进入上传照片页，上传完毕后状态：loaded -->
+			<div id='upload' class='box-btn'>上传照片</div>
+			<div class='ck-box'><input type="checkbox" id='info-ck' ><label for="info-ck"></label>我已阅读<span>《入网协议》</span></div>
+			<!-- 以上信息填写完成后恢复可点击状态，去掉btn-dis -->
+			<div id='submit' class='pos-btn'><span class="btn btn-dis next-btn">提交</span></div>
+		</div>
+
+	</div>
+	<script src="../lib/requirejs/require.2.1.15.min.js" data-main="../main"></script>
+</body>
+</html>
