@@ -1,8 +1,10 @@
 define(['jquery','artTemplate','js/api','js/common','js/slideSelect'],function($,tpl,api,common){
 	if(window.location.href.indexOf('choose.html') == -1) return;
 
-	if(localStorage.getItem('selected-phone')&&localStorage.getItem('selected-phone')!=undefined){
-		$('.choose-tel').text('已选：'+JSON.parse(localStorage.getItem('selected-phone')))
+	if(localStorage.getItem('selected-phone')&&localStorage.getItem('selected-phone')!='undefined'){
+		var tel = JSON.parse(localStorage.getItem('selected-phone'));
+		$('.choose-tel').text('已选：'+tel);
+		$('<input type="hidden" value="'+tel+'">').appendTo($('.choose-tel'));
 	}
 
 	var qp = $('.question-page');

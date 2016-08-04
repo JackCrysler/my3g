@@ -8,8 +8,9 @@ input{
   left: 0;
   top: 0;
   background: #000;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: opacity .3s linear;
+  z-index: 9999;
 }
 .mask-hide{
   display: none;

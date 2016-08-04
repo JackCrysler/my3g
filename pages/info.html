@@ -17,12 +17,12 @@
 <body>
 	<div class="container">
 		<div class="wrapper info">
-			<div class="box high">30元预存/0元月租/150 3023 4663<span class='ok'></span></div>
+			<div class="box high"><span class="box-info">30元预存/0元月租/150 3023 4663</span><span class='ok'></span></div>
 			<h2>身份信息</h2>
-			<div class='box'><input type="text"placeholder='姓名'></div>
-			<div class='box'><input type="text"placeholder='身份证号'></div>
-			<div class='box'><input type="text"placeholder='身份证地址'></div>
-			<div class='box'><input type="text"placeholder='联系电话'></div>
+			<div class='box'><input class="info-name" type="text"placeholder='姓名'></div>
+			<div class='box'><input class="info-id" type="text"placeholder='身份证号'></div>
+			<div class='box'><input class="info-id-location" type="text"placeholder='身份证地址'></div>
+			<div class='box'><input class="info-phone" type="text"placeholder='联系电话'></div>
 			<!-- 点击进入上传照片页，上传完毕后状态：loaded -->
 			<div id='upload' class='box-btn'>上传照片</div>
 			<div class='ck-box'><input type="checkbox" id='info-ck' ><label for="info-ck"></label>我已阅读<span>《入网协议》</span></div>
@@ -30,7 +30,38 @@
 			<div id='submit' class='pos-btn'><span class="btn btn-dis next-btn">提交</span></div>
 		</div>
 
+		<!--上传图片区域-->
+		<div class="plus-area right-page right-hide">
+
+		</div>
 	</div>
+	<script type="text/html" id="upload-tpl">
+		<div class="container pad-top">
+		<div class="wrapper upload">
+			<div class="photo-item">
+				<h2>手持身份证照片</h2>
+				<div class='photo'><img src="../img/img1.jpg" alt=""><input class="pic1" type="file"></div>
+			</div>
+			<div class="photo-item">
+				<h2>手持身份证正面照片和手表ICCID</h2>
+				<div class='photo'><img src="../img/img2.jpg" alt=""><input class="pic2" type="file"></div>
+			</div>
+			<div class="photo-item">
+				<h2>手持身份证反面照片</h2>
+				<div class='photo'><img src="../img/img3.jpg" alt=""><input class="pic3" type="file"></div>
+			</div>
+			<div class="btn over-btn btn-dis">完成</div>
+			<div class="upload-text">
+				<h2>上传须知</h2>
+				<ul>
+					<li>1.房间看电视附加费江苏大丰，飞机开始放假是的，饭店客房健康的</li>
+					<li>2.能否解释都发过你，废旧塑料地方开始疯狂，法库技术的菲利克斯放假，会发生的发生纠纷，房间看看是的开发商</li>
+					<li>3.饭店干活圣诞节，发奖金发生纠纷，发了上课到付款舒</li>
+				</ul>
+			</div>
+		</div>
+			</div>
+	</script>
 	<script src="../lib/requirejs/require.2.1.15.min.js" data-main="../main"></script>
 </body>
 </html>

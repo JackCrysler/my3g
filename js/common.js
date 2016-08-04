@@ -3,7 +3,11 @@ define([], function () {
         getUrlParams: function (target) {
             var reg = new RegExp("(&|^)" + target + "=([^&]*)(&|$)", 'i');
             var res = location.search.substr(1).match(reg);
-            return res[2];
+            if(res){
+                return decodeURI(res[2]);
+            }else {
+                return null;
+            }
         },
         countDown: function (ele) {
             if(ele.hasClass('counting')) return;
@@ -82,6 +86,9 @@ define([], function () {
                 }
             });
             return _arr;
+        },
+        getType:function(target){
+            return Object.prototype.toString.call(target);
         }
     }
 });
