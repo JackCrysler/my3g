@@ -5,6 +5,6 @@ require.config({
         'artTemplate':'lib/art-template/template-native'
     }
 });
-require(['fastClick','js/index','js/bind','js/choose','js/info'],function(fc){
+require(['fastClick','js/index','js/bind','js/choose','js/info','js/order','js/my'],function(fc){
     fc.attach(document.body);
 });

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--声明文档使用的字符编码-->
+    <meta charset="UTF-8">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <!--设置视口的宽度=设备的宽度；初始化比例：1:1；最大，最小比例为：1:1；禁止用户缩放或放大-->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--禁止自动识别电话号码-->
+    <meta name='format-detection' content='telephone=no'>
+    <!--禁止自动识别邮箱-->
+    <meta name='format-detection' content='email=no'>
+    <title>我的3G</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+	<div class="container pad-top">
+		<div class="wrapper my">
+			<div class="my-top">
+				<h3 class="title">账户余额：156.00元</h3>
+			</div>
+			<div class="my-tab">
+				<div class="tab-title">
+					<span class='on' data="query">流量查询</span>
+					<span data="pay">话费充值</span>
+					<span data="current">当月话费</span>
+					<span data="myHome">个人中心</span>
+				</div>
+				<div class="tab-main-wrap">
+					<div class="tab-main clear">
+						<!-- 流量查询 -->
+						<section>
+
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/html" id="query">
+		<ul class='count'>
+			<%for (var i=0; i<queryData.length; i++){%>
+			<li>
+				<h4><%= queryData[i].name %></h4>
+				<p><%= queryData[i].info %></p>
+			</li>
+			<%}%>
+		</ul>
+	</script>
+	<script type="text/html" id="pay">
+		<p><input type="text" placeholder='充值手机号码' value="<%= userPhone %>"></p>
+		<h4>充值金额</h4>
+		<div class="price clear">
+			<span class='on'>50元</span>
+			<span>100元</span>
+			<span>200元</span>
+			<span>500元</span>
+		</div>
+		<div class="btn btn-dis pay-btn">立即充值</div>
+	</script>
+	<script type="text/html" id="current">
+		<div class="current-top">
+			<h4><span class='left'>月基本费</span><span class='right'><%= baseCost %></span></h4>
+			<ul>
+				<li><span class='left'>基本月租</span><span class='right'><%= baseMcost1 %></span></li>
+				<li><span class='left'>基本月租</span><span class='right'><%= baseMcost2 %></span></li>
+			</ul>
+			<h4><span class='left'>增值业务</span><span class='right'><%= plusCost %></span></h4>
+			<ul>
+				<li><span class='left'>点对点短信</span><span class='right'><%= p2pMsg %></span></li>
+				<li><span class='left'>基本月租</span><span class='right'><%= baseMcost3 %></span></li>
+			</ul>
+			<h4><span class='left'>语音通话</span><span class='right'><%= speechCost %></span></h4>
+			<h2><span class='left'>合计缴费</span><span class='right'><%= totalCost %></span></h2>
+			<p class='tap'>特别提醒：如果您欠费后90天内未充值，您的号码将作销号处理</p>
+		</div>
+</script>
+	<script type="text/html" id="myHome">
+
+		<div class='my-menu'>
+			<h4>我的套餐</h4>
+			<p>0元月租套餐</p>
+			<ul>
+				<li>0元月租</li>
+				<li>主叫1.15分钟</li>
+				<li>0元月租</li>
+			</ul>
+		</div>
+		<div class="pos-btn exit-btn"><span class="btn">退出登录</span></div>
+</script>
+	<script type="text/html" id="commonTPl">
+		<ul class="footer-text my-text">
+			<li>注：本页数据仅供参考，更多详情请登录民生通讯官方网站<span>www.ms170.cn</span></li>
+			<li>民生通讯官方电话：400-2354565</li>
+		</ul>
+</script>
+	<script src="../lib/requirejs/require.2.1.15.min.js" data-main="../main"></script>
+</body>
+</html>

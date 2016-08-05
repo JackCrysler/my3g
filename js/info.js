@@ -130,11 +130,7 @@ define(['jquery','js/common','js/valid','js/dialog'],function($,common,validate,
      });
 
 
-
-
-
-
      $('#submit .next-btn').on('click',function(){
-          window.location.href=''
+          window.location.href='order.html';
      })
 });
