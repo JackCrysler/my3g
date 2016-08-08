@@ -48,17 +48,18 @@
 			</li>
 			<%}%>
 		</ul>
+		<% include('commonTPl') %>
 	</script>
 	<script type="text/html" id="pay">
 		<p><input type="text" placeholder='充值手机号码' value="<%= userPhone %>"></p>
 		<h4>充值金额</h4>
 		<div class="price clear">
-			<span class='on'>50元</span>
-			<span>100元</span>
-			<span>200元</span>
-			<span>500元</span>
+			<span class='fee-amount on'>50元</span>
+			<span class="fee-amount">100元</span>
+			<span class="fee-amount">200元</span>
+			<span class="fee-amount">500元</span>
 		</div>
-		<div class="btn btn-dis pay-btn">立即充值</div>
+		<div class="btn pay-btn">立即充值</div>
 	</script>
 	<script type="text/html" id="current">
 		<div class="current-top">
@@ -75,7 +76,9 @@
 			<h4><span class='left'>语音通话</span><span class='right'><%= speechCost %></span></h4>
 			<h2><span class='left'>合计缴费</span><span class='right'><%= totalCost %></span></h2>
 			<p class='tap'>特别提醒：如果您欠费后90天内未充值，您的号码将作销号处理</p>
+
 		</div>
+		<% include('commonTPl') %>
 </script>
 	<script type="text/html" id="myHome">
 
@@ -89,6 +92,7 @@
 			</ul>
 		</div>
 		<div class="pos-btn exit-btn"><span class="btn">退出登录</span></div>
+		<% include('commonTPl') %>
 </script>
 	<script type="text/html" id="commonTPl">
 		<ul class="footer-text my-text">
@@ -96,6 +100,7 @@
 			<li>民生通讯官方电话：400-2354565</li>
 		</ul>
 </script>
-	<script src="../lib/requirejs/require.2.1.15.min.js" data-main="../main"></script>
+	<!--<script src="../lib/requirejs/require.2.1.15.min.js" data-main="../main"></script>-->
+	<script src="../build/build.js"></script>
 </body>
 </html>

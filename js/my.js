@@ -8,15 +8,25 @@ define(['jquery','artTemplate'],function($,template){
     '<%}%>'+
     '</ul>';
     $('.tab-title').on('click','span',function(){
+        $(this).addClass('on').siblings().removeClass('on');
         var id = $(this).attr('data');
         rend(id);
-
-
-
     });
 
+    rend('query');
     function rend(id){
-        $.when($.ajax('../data/usedInfo.json'))
+        var url = '';
+        if(id=='query'){
+            url = '../data/usedInfo.json';
+        }else if(id =='pay'){
+            var info = {
+                userPhone: 13261556179
+            };
+            var html = template(id,info);
+            wrap.html(html);
+            return;
+        }
+        $.when($.ajax(url))
             .done(function(data){
                 var tmp = {
                     queryData:data
@@ -32,4 +42,8 @@ define(['jquery','artTemplate'],function($,template){
                 console.log(e)
             });
     }
+
+    $('.tab-main').on('click','.fee-amount',function(){
+        $(this).addClass('on').siblings().removeClass('on');
+    })
 });
