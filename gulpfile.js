@@ -5,7 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var reload      = browserSync.reload;
 var rjs = require('gulp-requirejs');
-var amdOptimize = require('gulp-requirejs-optimize');
+
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 // 静态服务器 + 监听 scss/html 文件
